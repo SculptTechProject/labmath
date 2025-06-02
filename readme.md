@@ -88,7 +88,7 @@ Układ równań (wskazać iloczyn wartości z rozwiązania układu)
 % B wpisujemy dane po prawej stronie od góry
 A = [-3 3 -3; 10 33 -3; 37 0 30];
 B = [6; 22; 4];
-x = A \ B; # PAMIETAJ MUSI BYC \   !!!!!!!!!
+x = A \ B; % PAMIETAJ MUSI BYC \   !!!!!!!!!
 
 fprintf('x = %d, y = %d, z = %d\n', x(1), x(2), x(3));
 iloczyn = x(1) * x(2) * x(3);
