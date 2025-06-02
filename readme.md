@@ -90,9 +90,9 @@ A = [-3 3 -3; 10 33 -3; 37 0 30];
 B = [6; 22; 4];
 x = A \ B; % PAMIETAJ MUSI BYC \   !!!!!!!!!
 
-fprintf('x = %d, y = %d, z = %d\n', x(1), x(2), x(3));
+fprintf('x = %d, y = %d, z = %.2f\n', x(1), x(2), x(3));
 iloczyn = x(1) * x(2) * x(3);
-fprintf('Iloczyn liczb(Wynik): x * y * z = %d\n', iloczyn);
+fprintf('Iloczyn liczb(Wynik): x * y * z = %.2f\n', iloczyn);
 ```
 
 Zadanie o macierzy schodkowej pewnego układu równań x y z t u v
