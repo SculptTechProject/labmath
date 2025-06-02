@@ -76,7 +76,7 @@ odp = [
 # Nastepnie przechodzimy przez wszystkie odpowiedzi loopem
 for i = 1:size(odp,1)
   x = odp(i,:)';
-  if norm(A*x - B) < le-6
+  if norm(A*x - B) < 1e-6
     printf("Odpowiedzi z (%d, %d, %d) są rozwiązaniem\n", x(1),x(2),x(3));
   end
 end
