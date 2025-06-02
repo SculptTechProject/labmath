@@ -36,7 +36,7 @@ a(end-2:end, :) = [];
 
 % Dodajemy wiersz na końcu: liczba 5.4 powtórzona odpowiednią liczbę razy
 liczba_kolumny = 5.4;
-kolumna = repmat(liczby_kolumny, size(a,1), 1);
+kolumna = repmat(liczba_kolumny, size(a,1), 1);
 a = [a, kolumna];
 
 % Dodajemy wiersz na końcu: liczba -1.0 powtórzona odpowiednią liczbę razy
@@ -49,6 +49,9 @@ a(end,end) = 0;
 
 % Obliczamy wyznacznik i podajemy z dokładnością do 1 miejsca po przecinku
 d = det(a);
+
+fprintf("%.2f\n", d);
+
 ```
 
 # Vier
