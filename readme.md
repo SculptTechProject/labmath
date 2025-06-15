@@ -1,4 +1,37 @@
-## Drei
+## Dos
+Zadanie 1 – pierwiastki równania x^2 + 11x + 9 = 0
+```matlab
+a = 1; b = 11; c = 9;
+d = b.^2 - 4*a*c;
+r1 = (-b + sqrt(d)) / (2*a);
+r2 = (-b - sqrt(d)) / (2*a);
+minRoot = min([r1, r2]);
+minRoot4 = round(minRoot*1e4)/1e4;    % zaokrąglij do 4 miejsc
+fprintf('Mniejszy pierwiastek: %.4f\n', minRoot4);
+```
+
+Zadanie 2 – wektor od -50 do 130, operacje i suma na pozycjach nieparzystych
+```matlab
+v = -50:130;           % wektor podstawowy
+v = sin(abs(v));       % sinus wartości bezwzględnych
+v = v * 7;             % mnożenie przez 7
+v = v + 19;            % dodanie 19
+sumOdd = sum(v(1:2:end));
+sumOdd4 = round(sumOdd*1e4)/1e4;  % zaokrąglenie
+fprintf('Suma elementów na nieparzystych pozycjach: %.4f\n', sumOdd4);
+```
+
+Zadanie 3 – dowolna liczba z [13,30] i v z 185 kolejnych wielokrotności
+```matlab
+n = 17;                % tu wybierz swoją liczbę z przedziału [13,30]
+v3 = n * (1:185);      % wektor 185 kolejnych wielokrotności
+r = mod(v3, 37);       
+mask = (r < 9) | (r > 21);
+count = sum(mask);
+fprintf('Ilość elementów z resztą <9 lub >21: %d\n', count);
+```
+
+## Tres
 
 Generowanie wektora złożonego z liczb parzystych.
 
@@ -54,6 +87,6 @@ fprintf("%.2f\n", d);
 
 ```
 
-# Vier
+# Cuatro
 
 soon XD
