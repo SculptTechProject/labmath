@@ -164,3 +164,56 @@ fprintf("%.2f\n", d);
 # Cuatro
 
 soon XD
+
+# Cinco
+Prawdopodobieństwo empiryczne
+
+Zadanie 1
+Wylosuj liczbe 0 lub 1 z takim samym prawdopodobieństwem (randi rand)
+
+Zadanie 2
+rzucamy sześcienną kostką 5 razy
+
+1
+Wylosuj 1 zestaw rzutów.
+2
+wylosuj 5 takich rzutów
+
+Zadanie 3
+oblicz sume oczek ze wszystkich 5 rzy\utów
+k
+3 wylosuj 10^6 zestawówó rzutów
+
+Zadanie 4
+rzucamy kostką 5 razy, oblicz prawdopodobieństwo empiryczne że suma oczek będzie mniejsza niż 15
+
+
+Zadanie 5
+
+oblicz prawdowieńsfwo mpiryczne że wypadnie 1 lub 2
+
+Zadanie 6
+
+oblicz prawdopodobieństwo żę trójka wypadnie 2 razy
+
+Zadanie 7
+czym się różni polecenia 
+(r) round(10*rand)
+
+(f) floor(10*rand)
+
+prawdopodobieństwo 0-9 jest wyższe w (f)
+
+Zadanie 8
+Oblicz wartość oczekiwaną rzutu kostką sześcienną
+
+Zadanie 9
+Oblicz wartość oczewiwane zmiennych r oraz f.
+
+(r) round(10*rand)
+(f) floor(10*rand)
+
+Zadanie 10 Oblicz wariacje dla zmiennych:
+a)rzut kostką sześcienną
+
+to były zadania na matmie i można coś ugotować z nich co?
