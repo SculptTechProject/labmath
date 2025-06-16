@@ -166,54 +166,44 @@ fprintf("%.2f\n", d);
 soon XD
 
 # Cinco
-Prawdopodobieństwo empiryczne
+Pierwsze Zadanie Skrypt
+```matlab
+# A wpisujemy dane x y z, jeżeli nie ma jednych z xyz wpisujemy poprostu 0 w miejsce w którym x lub y lub z
+# powinno byc, jeżeli jest sam np x wpisujemy 1 (podmień juz aktualnie wpisane dane)
+# B wpisujemy dane po prawej stronie od góry (podmień juz aktualnie wpisane dane)
+A = [1 1 -14; 0 1 -5; -1 2 -1];
+B = [7; 8; 17];
 
-Zadanie 1
-Wylosuj liczbe 0 lub 1 z takim samym prawdopodobieństwem (randi rand)
+# Tutaj podajesz odpowiedzi po przecinku (podmieniasz wartości)
+odp = [
+ -17, 18, 2;
+  89, 58, 3;
+  17, 18, 2;
+ -10, 3, -1;
+ -28, -2, -3;
+ -1, 8, 0;
+ -1, 9, 0;
+ -28, -7, -3;
+  8, 3, 1;
+ 89, 58, 10
+];
 
-Zadanie 2
-rzucamy sześcienną kostką 5 razy
-
-1
-Wylosuj 1 zestaw rzutów.
-2
-wylosuj 5 takich rzutów
-
-Zadanie 3
-oblicz sume oczek ze wszystkich 5 rzy\utów
-k
-3 wylosuj 10^6 zestawówó rzutów
-
-Zadanie 4
-rzucamy kostką 5 razy, oblicz prawdopodobieństwo empiryczne że suma oczek będzie mniejsza niż 15
-
-
-Zadanie 5
-
-oblicz prawdowieńsfwo mpiryczne że wypadnie 1 lub 2
-
-Zadanie 6
-
-oblicz prawdopodobieństwo żę trójka wypadnie 2 razy
-
-Zadanie 7
-czym się różni polecenia 
-(r) round(10*rand)
-
-(f) floor(10*rand)
-
-prawdopodobieństwo 0-9 jest wyższe w (f)
-
-Zadanie 8
-Oblicz wartość oczekiwaną rzutu kostką sześcienną
-
-Zadanie 9
-Oblicz wartość oczewiwane zmiennych r oraz f.
-
-(r) round(10*rand)
-(f) floor(10*rand)
-
-Zadanie 10 Oblicz wariacje dla zmiennych:
-a)rzut kostką sześcienną
-
-to były zadania na matmie i można coś ugotować z nich co?
+for i = 1:size(odp,1)
+    x = odp(i,:)';
+    if norm(A*x - B) < 1e-6
+        printf("Odpowiedzi z (%d, %d, %d) są rozwiązaniem\n", x(1), x(2), x(3));
+    end
+end
+```
+```matlab
+Trzecie Zadanie Skrypt
+# A wpisujemy dane x y z, jeżeli nie ma jednych z xyz wpisujemy poprostu 0 w miejsce w którym x lub y lub z
+# powinno byc, jeżeli jest sam np x wpisujemy 1 (podmień juz aktualnie wpisane dane)
+# B wpisujemy dane po prawej stronie od góry (podmień juz aktualnie wpisane dane)
+A = [-3 3 -3; 10 33 -3; 37 0 30];
+B = [6; 22; 4];
+x = A \ B;
+fprintf('x = %d, y = %d, z = %d\n', x(1), x(2), x(3));
+iloczyn = x(1) * x(2) * x(3);
+fprintf('Iloczyn liczb(Wynik): x * y * z = %d\n', iloczyn);
+```
