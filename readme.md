@@ -1,3 +1,77 @@
+## Uno
+zadanie 1
+#Funkcje trygonometryczne (sin, cos, tan, cot)
+
+```matlab
+% Sinus kąta w radianach
+sin(0.5)
+% => ans = 0.4794
+
+% Cosinus kąta w radianach
+cos(1)
+% => ans = 0.5403
+
+% Tangens kąta w radianach
+tan(-78)
+% => ans = 0.5992
+
+% Cotangens kąta w radianach (cot(x) = 1 / tan(x))
+1 / tan(0.8)
+% => ans = 1.1918
+```
+
+#Odwrotne funkcje trygonometryczne (asin, acos, atan, acot)
+```matlab
+% arcsin z 0.5 (daje kąt w radianach)
+asin(0.5)
+% => ans = 0.5236 (czyli π/6)
+
+% arccos z 0.88992
+acos(0.88992)
+% => ans = 0.4736 rad
+
+% arctan z π
+atan(pi)
+% => ans = 1.2626 rad
+
+% arcctg z 1 (czyli acot(1))
+atan(1)  % bo acot(1) = atan(1)
+% => ans = 0.7854 (czyli π/4)
+```
+
+#Zamiana jednostek: stopnie ↔ radiany
+```matlab
+% Zamiana 85 stopni na radiany
+deg2rad(85)
+% => ans = 1.4835 rad
+
+
+% Zamiana radianów na stopnie (np. atan(pi))
+rad2deg(atan(pi))
+% => ans = 72.3432 stopnia
+```
+
+#Połączone przykłady (bardziej złożone)
+```matlab
+% Oblicz cosinus 85 stopni
+kat = deg2rad(85);
+cos(kat)
+% => ans = 0.0872
+
+
+% Oblicz kąt (w stopniach), którego tangens wynosi π
+kat_rad = atan(pi);
+kat_deg = rad2deg(kat_rad)
+% => ans = 72.3432
+
+
+% Oblicz cotangens kąta 45 stopni
+cot_kat = 1 / tan(deg2rad(45))
+% => ans = 1
+```
+
+
+
 ## Dos
 Zadanie 1 – pierwiastki równania x^2 + 11x + 9 = 0
 ```matlab
