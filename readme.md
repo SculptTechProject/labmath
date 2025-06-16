@@ -70,8 +70,40 @@ cot_kat = 1 / tan(deg2rad(45))
 % => ans = 1
 ```
 
+% Skrypt 2 zad - suma wielokrotności liczby
+```matlab
+a = 20;       % wartość wielokrotności
+n = 2815;     % ilość elementów
 
+v = a * (1:n);
+suma = sum(v);
 
+fprintf('Suma: %d\n', suma);
+```
+
+% Skrypt 3 zad - Dzielenie dwóch wyrażeń i zaokrąglenie w dół
+```matlab
+liczba_logarytmu = 5;
+mnoznik_log = 11920928955078125;
+
+z = log(5^3 * mnoznik_log) / log(liczba_logarytmu);
+
+kat_stopnie = 89.996;
+y = exp(11) + tan(deg2rad(kat_stopnie));
+
+n = floor(y / z);
+fprintf('n = %d\n', n);
+```
+```matlab
+% Skrypt 4 zad- obliczanie liczby przedziałów
+liczba = 38068692544000000;
+M = liczba^(1/6);     % pierwiastek 6. stopnia
+
+v = 10:15:M;          % przedziały co 15 zaczynając od 10
+
+n = floor((M - 10) / 15) + 1;
+fprintf('n = %d\n', n);
+```
 ## Dos
 Zadanie 1 – pierwiastki równania x^2 + 11x + 9 = 0
 ```matlab
