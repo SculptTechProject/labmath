@@ -1,4 +1,4 @@
-## Uno
+## Wejściówka nr 1
 zadanie 1
 #Funkcje trygonometryczne (sin, cos, tan, cot)
 
@@ -104,7 +104,7 @@ v = 10:15:M;          % przedziały co 15 zaczynając od 10
 n = floor((M - 10) / 15) + 1;
 fprintf('n = %d\n', n);
 ```
-## Dos
+## Wejściówka nr 2
 Zadanie 1 – pierwiastki równania x^2 + 11x + 9 = 0
 ```matlab
 a = 1; b = 11; c = 9;
@@ -137,7 +137,7 @@ count = sum(mask);
 fprintf('Ilość elementów z resztą <9 lub >21: %d\n', count);
 ```
 
-## Tres
+## Wejściówka nr 3
 
 Generowanie wektora złożonego z liczb parzystych.
 
@@ -193,49 +193,107 @@ fprintf("%.2f\n", d);
 
 ```
 
-# Cuatro
+# Wejściówka nr 4
 
-soon XD
-
-# Cinco
-Pierwsze Zadanie Skrypt
 ```matlab
-# A wpisujemy dane x y z, jeżeli nie ma jednych z xyz wpisujemy poprostu 0 w miejsce w którym x lub y lub z
-# powinno byc, jeżeli jest sam np x wpisujemy 1 (podmień juz aktualnie wpisane dane)
-# B wpisujemy dane po prawej stronie od góry (podmień juz aktualnie wpisane dane)
-A = [1 1 -14; 0 1 -5; -1 2 -1];
-B = [7; 8; 17];
+%% Zadanie 1
+% równanie płaszczyzny: -2x -4y -5z +35 = 0
+a = -2; b = -4; c = -5; d = 35;
+n = [a, b, c];               % wektor normalny
+P1 = [0, 8, -1];             % punkt zaczepienia
+end_n = P1 + n;              % koniec wektora normalnego
 
-# Tutaj podajesz odpowiedzi po przecinku (podmieniasz wartości)
-odp = [
- -17, 18, 2;
-  89, 58, 3;
-  17, 18, 2;
- -10, 3, -1;
- -28, -2, -3;
- -1, 8, 0;
- -1, 9, 0;
- -28, -7, -3;
-  8, 3, 1;
- 89, 58, 10
-];
+fprintf('Zad1:\n');
+fprintf('  n = [%d, %d, %d]\n', n);
+fprintf('  koniec wektora w P1: [%.1f, %.1f, %.1f]\n\n', end_n);
+```
 
-for i = 1:size(odp,1)
-    x = odp(i,:)';
-    if norm(A*x - B) < 1e-6
-        printf("Odpowiedzi z (%d, %d, %d) są rozwiązaniem\n", x(1), x(2), x(3));
-    end
+```matlab
+%% Zadanie 2
+% siatka punktów
+[x, y] = meshgrid(-10:1:10, -10:1:10);
+% obliczenie z z równania płaszczyzny
+z = (-a*x - b*y - d)/c;
+
+figure;
+surf(x, y, z);
+hold on;
+axis equal
+xlabel('x'); ylabel('y'); zlabel('z');
+title('Płaszczyzna i wektor normalny');
+
+% wybieramy inny punkt na płaszczyźnie, np.
+P2 = [5, -3, (-a*5 - b*(-3) - d)/c];
+% rysujemy wektor normalny w P2
+quiver3(P2(1), P2(2), P2(3), n(1), n(2), n(3), 0.5, 'LineWidth',2);
+
+hold off;
+```
+
+```matlab
+%% Zadanie 3
+v = [9, 0, 3];
+P3 = [-6, 5, -3];
+
+end_v = P3 + v;              % koniec wektora
+mid_v = (P3 + end_v)/2;      % środek wektora
+% gdyby koniec v był w Q=mid_v, to początek:
+P_new = mid_v - v;
+
+fprintf('\nZad3:\n');
+fprintf('  koniec v przy P3: [%.1f, %.1f, %.1f]\n', end_v);
+fprintf('  środek v:           [%.1f, %.1f, %.1f]\n', mid_v);
+fprintf('  nowy początek v:    [%.1f, %.1f, %.1f]\n', P_new);
+```
+
+# Wejściówka nr 5
+```matlab
+%% Zadanie 1: 8-ścienna kostka
+% P(2)=1/14, P(6)=1/4, pozostałe równo
+p = zeros(1,8);
+p(2) = 1/14;
+p(6) = 1/4;
+rem = 1 - (p(2)+p(6));
+p([1,3,4,5,7,8]) = rem/6;
+
+x = 1:8;
+E4 = sum(x .* p);
+fprintf('Zad4:\n');
+for k = 1:8
+    fprintf('  x=%d  p=%.3f\n', x(k), p(k));
 end
+fprintf('  E(X)=%.3f\n\n', E4);
 ```
 ```matlab
-Trzecie Zadanie Skrypt
-# A wpisujemy dane x y z, jeżeli nie ma jednych z xyz wpisujemy poprostu 0 w miejsce w którym x lub y lub z
-# powinno byc, jeżeli jest sam np x wpisujemy 1 (podmień juz aktualnie wpisane dane)
-# B wpisujemy dane po prawej stronie od góry (podmień juz aktualnie wpisane dane)
-A = [-3 3 -3; 10 33 -3; 37 0 30];
-B = [6; 22; 4];
-x = A \ B;
-fprintf('x = %d, y = %d, z = %d\n', x(1), x(2), x(3));
-iloczyn = x(1) * x(2) * x(3);
-fprintf('Iloczyn liczb(Wynik): x * y * z = %d\n', iloczyn);
+%% Zadanie 2: 6 rzutów kostką 1–9
+% P(4) w 4. rzucie
+P4 = 1/9;
+
+% rozkład sumy S = X1+…+X6
+d = ones(1,9)*(1/9);
+for i = 2:6
+    d = conv(d, ones(1,9)*(1/9));
+end
+s = 6:54;  % możliwe sumy
+
+P_gt26 = sum(d(s>26));
+P_even_or_gt26 = sum(d(mod(s,2)==0 | s>26));
+
+fprintf('Zad5:\n');
+fprintf('  P(4 w 4. rzucie)=%.3f\n', P4);
+fprintf('  P(S>26)=%.3f\n', P_gt26);
+fprintf('  P(S parzysta lub >26)=%.3f\n\n', P_even_or_gt26);
+```
+```matlab
+%% Zadanie 3: zadany rozkład
+x6 = [2.5, 5.5, 8, 10, 13.545];
+p6 = [0.269, 0.266, 0.162, 0.02, 0.283];
+
+E6 = sum(x6 .* p6);
+Var6 = sum((x6.^2) .* p6) - E6^2;
+SD6 = sqrt(Var6);
+
+fprintf('Zad6:\n');
+fprintf('  E(X)=%.4f\n', E6);
+fprintf('  SD(X)=%.4f\n', SD6);
 ```
