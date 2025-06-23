@@ -218,23 +218,32 @@ Zad1:
 
 ```matlab
 %% Zadanie 2
-% siatka punktów
-[x, y] = meshgrid(-10:1:10, -10:1:10);
-% obliczenie z z równania płaszczyzny
-z = (-a*x - b*y - d)/c;
+% Punkt 1
+x1 = 2;
+y1 = 3;
+z1 = (-a*x1 - b*y1 - d)/c;
+P1 = [x1, y1, z1];
 
+% Punkt 2
+x2 = -4;
+y2 = 1;
+z2 = (-a*x2 - b*y2 - d)/c;
+P2 = [x2, y2, z2];
+
+% Punkt 3
+x3 = 0;
+y3 = -2;
+z3 = (-a*x3 - b*y3 - d)/c;
+P3 = [x3, y3, z3];
+
+[x, y] = meshgrid(-10:1:10, -10:1:10);
+z = (-a*x - b*y - d)/c;
 figure;
 surf(x, y, z);
 hold on;
-axis equal
-xlabel('x'); ylabel('y'); zlabel('z');
-title('Płaszczyzna i wektor normalny');
-
-% wybieramy inny punkt na płaszczyźnie, np.
 P2 = [5, -3, (-a*5 - b*(-3) - d)/c];
-% rysujemy wektor normalny w P2
-quiver3(P2(1), P2(2), P2(3), n(1), n(2), n(3), 0.5, 'LineWidth',2);
-
+P3 = P2 + 0.5*n; % 0.5 
+plot3([P2(1) P3(1)], [P2(2) P3(2)], [P2(3) P3(3)], 'LineWidth', 2);
 hold off;
 ```
 
