@@ -196,16 +196,24 @@ fprintf("%.2f\n", d);
 # Wejściówka nr 4
 
 ```matlab
-%% Zadanie 1
-% równanie płaszczyzny: -2x -4y -5z +35 = 0
 a = -2; b = -4; c = -5; d = 35;
-n = [a, b, c];               % wektor normalny
+n = [a, b, c];
+y = 8;
+z = -1;
+x = (-(-4*y) - (-5*z) - 35) / (-2);
+
 P1 = [0, 8, -1];             % punkt zaczepienia
+P1 = [x, 8, -1];             % punkt zaczepienia
 end_n = P1 + n;              % koniec wektora normalnego
 
 fprintf('Zad1:\n');
 fprintf('  n = [%d, %d, %d]\n', n);
 fprintf('  koniec wektora w P1: [%.1f, %.1f, %.1f]\n\n', end_n);
+Zad1:
+  n = [-2, -4, -5]
+  koniec wektora w P1: [2.0, 4.0, -6.0]
+
+>> 
 ```
 
 ```matlab
